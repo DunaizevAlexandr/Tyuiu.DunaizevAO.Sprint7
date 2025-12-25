@@ -14,7 +14,7 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            FormAbout formAbout = new FormAbout();
+            FormAbout_DAO formAbout = new FormAbout_DAO();
             formAbout.ShowDialog();
         }
 
@@ -26,8 +26,23 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            FormHelp formHelp = new FormHelp();
+            FormHelp_DAO formHelp = new FormHelp_DAO();
             formHelp.ShowDialog();
+        }
+
+        private void buttonStart_DAO_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipButton_DAO.ToolTipTitle = "Главное окно";
+        }
+
+        private void buttonAbout_DAO_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipButton_DAO.ToolTipTitle = "Справка";
+        }
+
+        private void buttonHelp_DAO_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipButton_DAO.ToolTipTitle = "Краткое руководство пользователя";
         }
     }
 }

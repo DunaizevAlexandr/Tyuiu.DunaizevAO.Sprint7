@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBoxLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxLogo_DAO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAtsAAAK3CAYAAABURoOJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAA/7JJREFUeF7c/ed3XGmWHvj23zDrrjszS22qKjPpDbz3BEjQAAThvffekyBB771N
+        vQAADr0BR/uQrQAA/7JJREFUeF7c/ed3XGmWHvj23zDrrjszS22qKjPpDbz3BEjQAAThvffekyBB771N
         mqR3STKTTO8zKzOrsst2uW5VG6m71VLLtEZSa6SRdDXS6Grf59lv7Ig3DgMgmUZduh+edSKOixMBIOIX
         G/u857eWfGupLP69JY9lEbKQ+dbjWfTtpeEs/s6yr5Qlz6348nlh5byJX5Yi+VmrpWx9lWxYUyapCRmY
         v1xe+PYiWfidxbLoOTzX53EcCOdHZQHmLVg6Zxa/sBhTl5VLl0tqYrKkJaVKYlyCrFiyTOc11jbIyOCw
@@ -10404,7 +10404,7 @@
         TciH+oqyLdGeHjwf/v/d8F2G2WdIrQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="textBoxInfo.Text" xml:space="preserve">
+  <data name="textBoxInfo_DAO.Text" xml:space="preserve">
     <value>Разработчик: Дунайцев А.О.
 
 Группа РППБ25-1
