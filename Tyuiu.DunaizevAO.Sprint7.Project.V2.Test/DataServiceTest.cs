@@ -6,8 +6,15 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidLoadFile()
         {
+            DataService ds = new DataService();
+
+            string path = @"C:\DataSprint7\Owner.csv";
+            FileInfo info = new FileInfo(path);
+            bool res = info.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, res);
         }
     }
 }
