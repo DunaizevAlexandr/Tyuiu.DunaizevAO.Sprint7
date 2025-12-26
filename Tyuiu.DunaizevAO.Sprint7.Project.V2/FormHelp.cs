@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 {
-    public partial class FormHelp_DAO : Form
+    public partial class FormHelp : Form
     {
-        public FormHelp_DAO()
+        public FormHelp()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 {
-    partial class FormAbout_DAO
+    partial class FormAbout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout_DAO));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             pictureBoxLogo_DAO = new PictureBox();
             textBoxInfo_DAO = new TextBox();
             buttonOK_DAO = new Button();
@@ -68,7 +68,7 @@
             buttonOK_DAO.UseVisualStyleBackColor = true;
             buttonOK_DAO.Click += buttonOK_Click;
             // 
-            // FormAbout_DAO
+            // FormAbout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -78,7 +78,7 @@
             Controls.Add(pictureBoxLogo_DAO);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "FormAbout_DAO";
+            Name = "FormAbout";
             Text = "О программе";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo_DAO).EndInit();
             ResumeLayout(false);

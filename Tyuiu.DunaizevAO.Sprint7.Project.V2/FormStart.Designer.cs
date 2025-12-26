@@ -111,7 +111,6 @@
             Name = "FormStart";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Спринт 7 | Проект | Дунайцев А.О.";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

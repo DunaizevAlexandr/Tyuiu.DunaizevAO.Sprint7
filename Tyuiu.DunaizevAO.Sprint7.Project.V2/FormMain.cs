@@ -381,7 +381,7 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
                 {
                     saveFileDialog_DAO.FileName = "ProvData.csv";
                 }
-                saveFileDialog_DAO.InitialDirectory = @":C";
+                saveFileDialog_DAO.InitialDirectory = @"C:\";
                 if (saveFileDialog_DAO.ShowDialog() == DialogResult.OK)
                 {
                     string savepath = saveFileDialog_DAO.FileName;
@@ -403,7 +403,7 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
                         }
                         strBuilder.AppendLine();
                     }
-                    File.WriteAllText(savepath, strBuilder.ToString());
+                    File.WriteAllText(savepath, strBuilder.ToString(), Encoding.UTF8);
                     MessageBox.Show("Файл сохранен", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -447,5 +447,6 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
                 }
             }
         }
+
     }
 }

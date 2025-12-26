@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 {
-    public partial class FormAbout_DAO : Form
+    public partial class FormAbout : Form
     {
-        public FormAbout_DAO()
+        public FormAbout()
         {
             InitializeComponent();
         }

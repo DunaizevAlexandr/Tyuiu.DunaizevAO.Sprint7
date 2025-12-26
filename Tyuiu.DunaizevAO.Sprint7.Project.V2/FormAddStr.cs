@@ -12,12 +12,12 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 {
     public partial class FormAddStr : Form
     {
-        static string varTabl = FormMain.varTabl;
+        private string varTabl;
         public string NewStr { get; private set; }
         public FormAddStr(string tableType)
         {
             InitializeComponent();
-            varTabl = tableType;
+            this.varTabl = tableType;
 
             if (varTabl == "Owner")
             {

@@ -7,14 +7,9 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            FormAbout_DAO formAbout = new FormAbout_DAO();
+            FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
 
@@ -26,7 +21,7 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            FormHelp_DAO formHelp = new FormHelp_DAO();
+            FormHelp formHelp = new FormHelp();
             formHelp.ShowDialog();
         }
 

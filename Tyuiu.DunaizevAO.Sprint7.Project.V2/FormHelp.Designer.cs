@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 {
-    partial class FormHelp_DAO
+    partial class FormHelp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHelp_DAO));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHelp));
             labelName_DAO = new Label();
             panelName_DAO = new Panel();
             panelText_DAO = new Panel();
@@ -93,14 +93,14 @@
             textBoxText_DAO.TabIndex = 0;
             textBoxText_DAO.Text = resources.GetString("textBoxText_DAO.Text");
             // 
-            // FormHelp_DAO
+            // FormHelp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(544, 434);
             Controls.Add(panelText_DAO);
             Controls.Add(panelName_DAO);
-            Name = "FormHelp_DAO";
+            Name = "FormHelp";
             Text = "Краткое руководство пользователя";
             panelName_DAO.ResumeLayout(false);
             panelName_DAO.PerformLayout();
