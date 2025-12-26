@@ -355,13 +355,8 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
         private void buttonChart_DAO_Click(object sender, EventArgs e)
         {
-            // Создаем форму
             FormChart chartForm = new FormChart();
-
-            // Загружаем данные
             chartForm.LoadChartData(dataGridViewResult_DAO);
-
-            // Показываем форму
             chartForm.Show();
         }
 
@@ -420,28 +415,21 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
         private void buttonAddStr_DAO_Click(object sender, EventArgs e)
         {
-            // Просто открываем форму
             FormAddStr formAddStr = new FormAddStr(varTabl);
 
             if (formAddStr.ShowDialog() == DialogResult.OK)
             {
-                // Получаем строку
                 string newStr = formAddStr.NewStr;
 
                 if (!string.IsNullOrEmpty(newStr))
                 {
-                    // Разделяем строку на части
                     string[] values = newStr.Split(';');
 
-                    // Добавляем новую строку
                     int newRowIndex = dataGridViewResult_DAO.Rows.Add();
 
-                    // Автоматически вычисляем номер (текущее количество строк)
                     int autoNumber = dataGridViewResult_DAO.Rows.Count;
                     dataGridViewResult_DAO.Rows[newRowIndex].Cells[0].Value = autoNumber.ToString();
 
-                    // Заполняем остальные ячейки, начиная со второго столбца
-                    // i = 1 потому что 0-й столбец (номер) уже заполнен
                     for (int i = 1; i < Math.Min(values.Length + 1, dataGridViewResult_DAO.Columns.Count); i++)
                     {
                         if (i - 1 < values.Length)
