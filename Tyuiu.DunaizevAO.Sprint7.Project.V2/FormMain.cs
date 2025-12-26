@@ -395,11 +395,16 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
 
                     for (int i = 0; i < rows; i++)
                     {
+                        if (dataGridViewResult_DAO.Rows[i].IsNewRow)
+                            continue;
+
                         for (int j = 0; j < columns; j++)
                         {
-                            strBuilder.Append(dataGridViewResult_DAO.Rows[i].Cells[j].Value);
+                            string cellValue = dataGridViewResult_DAO.Rows[i].Cells[j].Value?.ToString() ?? "";
 
-                            if (j != columns - 1) strBuilder.Append(",");
+                            strBuilder.Append(cellValue);
+
+                            if (j != columns - 1) strBuilder.Append(";");
                         }
                         strBuilder.AppendLine();
                     }
