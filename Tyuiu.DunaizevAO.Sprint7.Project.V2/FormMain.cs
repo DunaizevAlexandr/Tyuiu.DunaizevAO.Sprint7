@@ -24,7 +24,6 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
         public static string varTabl;
         static int rows;
         static int columns;
-        static string[] MinMaxStr;
         static int MinMaxCol;
         DataService ds = new DataService();
 
@@ -121,14 +120,14 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             toolTipButton_DAO.ToolTipTitle = "Найти";
         }
 
-        private void buttonSearchMin_DAO_MouseEnter(object sender, EventArgs e)
+        private void buttonSortAsc_DAO_MouseEnter(object sender, EventArgs e)
         {
-            toolTipButton_DAO.ToolTipTitle = "Минимум";
+            toolTipButton_DAO.ToolTipTitle = "По возростанию";
         }
 
-        private void buttonSearchMax_DAO_MouseEnter(object sender, EventArgs e)
+        private void buttonSortDesc_DAO_MouseEnter(object sender, EventArgs e)
         {
-            toolTipButton_DAO.ToolTipTitle = "Максимум";
+            toolTipButton_DAO.ToolTipTitle = "По убыванию";
         }
 
         private void buttonChart_DAO_MouseEnter(object sender, EventArgs e)

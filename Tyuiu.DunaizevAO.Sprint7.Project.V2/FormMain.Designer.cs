@@ -140,6 +140,7 @@
             buttonSortDesc_DAO.Size = new Size(43, 45);
             buttonSortDesc_DAO.TabIndex = 4;
             buttonSortDesc_DAO.Text = "▼";
+            toolTipButton_DAO.SetToolTip(buttonSortDesc_DAO, "Отсортировать по уменьшению");
             buttonSortDesc_DAO.UseVisualStyleBackColor = true;
             buttonSortDesc_DAO.Visible = false;
             buttonSortDesc_DAO.Click += buttonSortDesc_DAO_Click;
@@ -151,6 +152,7 @@
             buttonSortAsc_DAO.Size = new Size(43, 45);
             buttonSortAsc_DAO.TabIndex = 3;
             buttonSortAsc_DAO.Text = "▲";
+            toolTipButton_DAO.SetToolTip(buttonSortAsc_DAO, "Отсортировать по возростанию");
             buttonSortAsc_DAO.UseVisualStyleBackColor = true;
             buttonSortAsc_DAO.Visible = false;
             buttonSortAsc_DAO.Click += buttonSortAsc_DAO_Click;
