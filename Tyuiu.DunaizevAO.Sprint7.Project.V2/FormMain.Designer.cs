@@ -36,13 +36,12 @@
             buttonProvider_DAO = new Button();
             buttonOwner_DAO = new Button();
             buttonShop_DAO = new Button();
+            buttonSortDesc_DAO = new Button();
+            buttonSortAsc_DAO = new Button();
             panelTable_DAO = new Panel();
             dataGridViewResult_DAO = new DataGridView();
             groupBoxSort_DAO = new GroupBox();
             buttonAddStr_DAO = new Button();
-            textBoxSearchMinMax_DAO = new TextBox();
-            buttonSearchMax_DAO = new Button();
-            buttonSearchMin_DAO = new Button();
             buttonChart_DAO = new Button();
             buttonSearch_DAO = new Button();
             textBoxSearch_DAO = new TextBox();
@@ -134,6 +133,28 @@
             buttonShop_DAO.Click += buttonShop_DAO_Click;
             buttonShop_DAO.MouseEnter += buttonShop_DAO_MouseEnter;
             // 
+            // buttonSortDesc_DAO
+            // 
+            buttonSortDesc_DAO.Location = new Point(535, 29);
+            buttonSortDesc_DAO.Name = "buttonSortDesc_DAO";
+            buttonSortDesc_DAO.Size = new Size(43, 45);
+            buttonSortDesc_DAO.TabIndex = 4;
+            buttonSortDesc_DAO.Text = "▼";
+            buttonSortDesc_DAO.UseVisualStyleBackColor = true;
+            buttonSortDesc_DAO.Visible = false;
+            buttonSortDesc_DAO.Click += buttonSortDesc_DAO_Click;
+            // 
+            // buttonSortAsc_DAO
+            // 
+            buttonSortAsc_DAO.Location = new Point(486, 29);
+            buttonSortAsc_DAO.Name = "buttonSortAsc_DAO";
+            buttonSortAsc_DAO.Size = new Size(43, 45);
+            buttonSortAsc_DAO.TabIndex = 3;
+            buttonSortAsc_DAO.Text = "▲";
+            buttonSortAsc_DAO.UseVisualStyleBackColor = true;
+            buttonSortAsc_DAO.Visible = false;
+            buttonSortAsc_DAO.Click += buttonSortAsc_DAO_Click;
+            // 
             // panelTable_DAO
             // 
             panelTable_DAO.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -158,10 +179,9 @@
             // groupBoxSort_DAO
             // 
             groupBoxSort_DAO.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxSort_DAO.Controls.Add(buttonSortDesc_DAO);
             groupBoxSort_DAO.Controls.Add(buttonAddStr_DAO);
-            groupBoxSort_DAO.Controls.Add(textBoxSearchMinMax_DAO);
-            groupBoxSort_DAO.Controls.Add(buttonSearchMax_DAO);
-            groupBoxSort_DAO.Controls.Add(buttonSearchMin_DAO);
+            groupBoxSort_DAO.Controls.Add(buttonSortAsc_DAO);
             groupBoxSort_DAO.Controls.Add(buttonChart_DAO);
             groupBoxSort_DAO.Controls.Add(buttonSearch_DAO);
             groupBoxSort_DAO.Controls.Add(textBoxSearch_DAO);
@@ -186,52 +206,11 @@
             buttonAddStr_DAO.Click += buttonAddStr_DAO_Click;
             buttonAddStr_DAO.MouseEnter += buttonAddStr_DAO_MouseEnter;
             // 
-            // textBoxSearchMinMax_DAO
-            // 
-            textBoxSearchMinMax_DAO.BackColor = SystemColors.ButtonHighlight;
-            textBoxSearchMinMax_DAO.Location = new Point(532, 29);
-            textBoxSearchMinMax_DAO.Multiline = true;
-            textBoxSearchMinMax_DAO.Name = "textBoxSearchMinMax_DAO";
-            textBoxSearchMinMax_DAO.ReadOnly = true;
-            textBoxSearchMinMax_DAO.Size = new Size(138, 45);
-            textBoxSearchMinMax_DAO.TabIndex = 9;
-            textBoxSearchMinMax_DAO.Visible = false;
-            // 
-            // buttonSearchMax_DAO
-            // 
-            buttonSearchMax_DAO.BackColor = SystemColors.ButtonHighlight;
-            buttonSearchMax_DAO.Cursor = Cursors.Hand;
-            buttonSearchMax_DAO.Location = new Point(676, 29);
-            buttonSearchMax_DAO.Name = "buttonSearchMax_DAO";
-            buttonSearchMax_DAO.Size = new Size(43, 45);
-            buttonSearchMax_DAO.TabIndex = 8;
-            buttonSearchMax_DAO.Text = "MAX";
-            toolTipButton_DAO.SetToolTip(buttonSearchMax_DAO, "Найти максимум в таблице");
-            buttonSearchMax_DAO.UseVisualStyleBackColor = false;
-            buttonSearchMax_DAO.Visible = false;
-            buttonSearchMax_DAO.Click += buttonSearchMax_DAO_Click;
-            buttonSearchMax_DAO.MouseEnter += buttonSearchMax_DAO_MouseEnter;
-            // 
-            // buttonSearchMin_DAO
-            // 
-            buttonSearchMin_DAO.BackColor = SystemColors.ButtonHighlight;
-            buttonSearchMin_DAO.Cursor = Cursors.Hand;
-            buttonSearchMin_DAO.Location = new Point(483, 29);
-            buttonSearchMin_DAO.Name = "buttonSearchMin_DAO";
-            buttonSearchMin_DAO.Size = new Size(43, 45);
-            buttonSearchMin_DAO.TabIndex = 7;
-            buttonSearchMin_DAO.Text = "MIN";
-            toolTipButton_DAO.SetToolTip(buttonSearchMin_DAO, "Найти минимум в таблице");
-            buttonSearchMin_DAO.UseVisualStyleBackColor = false;
-            buttonSearchMin_DAO.Visible = false;
-            buttonSearchMin_DAO.Click += buttonSearchMin_DAO_Click;
-            buttonSearchMin_DAO.MouseEnter += buttonSearchMin_DAO_MouseEnter;
-            // 
             // buttonChart_DAO
             // 
             buttonChart_DAO.Cursor = Cursors.Hand;
             buttonChart_DAO.Image = (Image)resources.GetObject("buttonChart_DAO.Image");
-            buttonChart_DAO.Location = new Point(751, 29);
+            buttonChart_DAO.Location = new Point(618, 29);
             buttonChart_DAO.Name = "buttonChart_DAO";
             buttonChart_DAO.Size = new Size(43, 45);
             buttonChart_DAO.TabIndex = 6;
@@ -345,14 +324,13 @@
         private Button buttonSaveFile_DAO;
         private GroupBox groupBoxFile_DAO;
         private GroupBox groupBoxSort_DAO;
-        private TextBox textBoxSearchMinMax_DAO;
-        private Button buttonSearchMax_DAO;
-        private Button buttonSearchMin_DAO;
         private Button buttonChart_DAO;
         private DataGridView dataGridViewResult_DAO;
         private OpenFileDialog openFileDialog_DAO;
         private SaveFileDialog saveFileDialog_DAO;
         private ToolTip toolTipButton_DAO;
         private Button buttonAddStr_DAO;
+        private Button buttonSortDesc_DAO;
+        private Button buttonSortAsc_DAO;
     }
 }

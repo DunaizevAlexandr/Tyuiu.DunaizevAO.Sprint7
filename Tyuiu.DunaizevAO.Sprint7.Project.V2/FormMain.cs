@@ -34,12 +34,10 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             dataGridViewResult_DAO.Rows.Clear();
             dataGridViewResult_DAO.Columns.Clear();
 
-            buttonSearchMin_DAO.Visible = true;
-            buttonSearchMax_DAO.Enabled = false;
-            buttonSearchMax_DAO.Visible = true;
-            buttonSearchMin_DAO.Enabled = false;
-            textBoxSearchMinMax_DAO.Visible = true;
-            textBoxSearchMinMax_DAO.Enabled = false;
+            buttonSortAsc_DAO.Visible = true;
+            buttonSortDesc_DAO.Visible = true;
+            buttonSortAsc_DAO.Enabled = false;
+            buttonSortDesc_DAO.Enabled = false;
             buttonChart_DAO.Visible = true;
             buttonChart_DAO.Enabled = false;
             buttonSearch_DAO.Enabled = false;
@@ -57,12 +55,10 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             dataGridViewResult_DAO.Rows.Clear();
             dataGridViewResult_DAO.Columns.Clear();
 
-            buttonSearchMin_DAO.Visible = false;
-            buttonSearchMax_DAO.Enabled = false;
-            buttonSearchMax_DAO.Visible = false;
-            buttonSearchMin_DAO.Enabled = false;
-            textBoxSearchMinMax_DAO.Visible = false;
-            textBoxSearchMinMax_DAO.Enabled = false;
+            buttonSortAsc_DAO.Visible = false;
+            buttonSortDesc_DAO.Visible = false;
+            buttonSortAsc_DAO.Enabled = false;
+            buttonSortDesc_DAO.Enabled = false;
             buttonChart_DAO.Visible = false;
             buttonChart_DAO.Enabled = false;
             buttonSearch_DAO.Enabled = false;
@@ -80,12 +76,10 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             dataGridViewResult_DAO.Rows.Clear();
             dataGridViewResult_DAO.Columns.Clear();
 
-            buttonSearchMin_DAO.Visible = true;
-            buttonSearchMax_DAO.Enabled = false;
-            buttonSearchMax_DAO.Visible = true;
-            buttonSearchMin_DAO.Enabled = false;
-            textBoxSearchMinMax_DAO.Visible = true;
-            textBoxSearchMinMax_DAO.Enabled = false;
+            buttonSortAsc_DAO.Visible = true;
+            buttonSortDesc_DAO.Visible = true;
+            buttonSortAsc_DAO.Enabled = false;
+            buttonSortDesc_DAO.Enabled = false;
             buttonChart_DAO.Visible = false;
             buttonChart_DAO.Enabled = false;
             buttonSearch_DAO.Enabled = false;
@@ -153,9 +147,8 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             openFilePath = openFileDialog_DAO.FileName;
             try
             {
-                buttonSearchMax_DAO.Enabled = true;
-                buttonSearchMin_DAO.Enabled = true;
-                textBoxSearchMinMax_DAO.Enabled = true;
+                buttonSortAsc_DAO.Enabled = true;
+                buttonSortDesc_DAO.Enabled = true;
                 buttonChart_DAO.Enabled = true;
                 buttonSearch_DAO.Enabled = true;
                 textBoxSearch_DAO.Enabled = true;
@@ -253,106 +246,7 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             }
         }
 
-        private void buttonSearchMax_DAO_Click(object sender, EventArgs e)
-        {
-            int columnIndex = MinMaxCol;
-
-            if (dataGridViewResult_DAO.RowCount == 0)
-            {
-                textBoxSearchMinMax_DAO.Text = "Таблица пуста";
-                return;
-            }
-
-            if (columnIndex >= dataGridViewResult_DAO.ColumnCount)
-            {
-                textBoxSearchMinMax_DAO.Text = $"Столбец {columnIndex + 1} не существует";
-                return;
-            }
-
-            double maxValue = double.MinValue;
-            int maxRowIndex = -1;
-
-            for (int i = 0; i < dataGridViewResult_DAO.RowCount; i++)
-            {
-                if (dataGridViewResult_DAO.Rows[i].Cells[columnIndex].Value != null)
-                {
-                    string cellValue = dataGridViewResult_DAO.Rows[i].Cells[columnIndex].Value.ToString();
-                    if (double.TryParse(cellValue, out double currentValue))
-                    {
-                        if (currentValue > maxValue)
-                        {
-                            maxValue = currentValue;
-                            maxRowIndex = i;
-                        }
-                    }
-                }
-            }
-
-            if (maxRowIndex != -1)
-            {
-
-                dataGridViewResult_DAO.ClearSelection();
-                dataGridViewResult_DAO.Rows[maxRowIndex].Selected = true;
-                dataGridViewResult_DAO.FirstDisplayedScrollingRowIndex = maxRowIndex;
-
-
-                textBoxSearchMinMax_DAO.Text = $"Макс: {maxValue} (строка {maxRowIndex + 1})";
-            }
-            else
-            {
-                textBoxSearchMinMax_DAO.Text = "Числовые данные не найдены";
-            }
-        }
-
-        private void buttonSearchMin_DAO_Click(object sender, EventArgs e)
-        {
-            int columnIndex = MinMaxCol;
-
-            if (dataGridViewResult_DAO.RowCount == 0)
-            {
-                textBoxSearchMinMax_DAO.Text = "Таблица пуста";
-                return;
-            }
-
-            if (columnIndex >= dataGridViewResult_DAO.ColumnCount)
-            {
-                textBoxSearchMinMax_DAO.Text = $"Столбец {columnIndex + 1} не существует";
-                return;
-            }
-
-            double minValue = double.MaxValue;
-            int minRowIndex = -1;
-
-            for (int i = 0; i < dataGridViewResult_DAO.RowCount; i++)
-            {
-                if (dataGridViewResult_DAO.Rows[i].Cells[columnIndex].Value != null)
-                {
-                    string cellValue = dataGridViewResult_DAO.Rows[i].Cells[columnIndex].Value.ToString();
-                    if (double.TryParse(cellValue, out double currentValue))
-                    {
-                        if (currentValue < minValue)
-                        {
-                            minValue = currentValue;
-                            minRowIndex = i;
-                        }
-                    }
-                }
-            }
-
-            if (minRowIndex != -1)
-            {
-                dataGridViewResult_DAO.ClearSelection();
-                dataGridViewResult_DAO.Rows[minRowIndex].Selected = true;
-                dataGridViewResult_DAO.FirstDisplayedScrollingRowIndex = minRowIndex;
-
-                textBoxSearchMinMax_DAO.Text = $"Мин: {minValue} (строка {minRowIndex + 1})";
-            }
-            else
-            {
-                textBoxSearchMinMax_DAO.Text = "Числовые данные не найдены";
-            }
-        }
-
+        
         private void buttonChart_DAO_Click(object sender, EventArgs e)
         {
             FormChart chartForm = new FormChart();
@@ -441,5 +335,51 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
             }
         }
 
+        private void buttonSortAsc_DAO_Click(object sender, EventArgs e)
+        {
+            SortDataGridView(true);
+        }
+
+        private void buttonSortDesc_DAO_Click(object sender, EventArgs e)
+        {
+            SortDataGridView(false);
+        }
+
+        private void SortDataGridView(bool ascending)
+        {
+            if (dataGridViewResult_DAO.Rows.Count <= 1) return;
+
+            var dataList = new List<object[]>();
+
+            for (int i = 0; i < dataGridViewResult_DAO.Rows.Count - 1; i++)
+            {
+                var row = dataGridViewResult_DAO.Rows[i];
+                object[] rowData = new object[dataGridViewResult_DAO.Columns.Count];
+
+                for (int j = 0; j < dataGridViewResult_DAO.Columns.Count; j++)
+                    rowData[j] = row.Cells[j].Value;
+
+                dataList.Add(rowData);
+            }
+
+            dataList.Sort((a, b) =>
+            {
+                double valA = double.Parse(a[MinMaxCol]?.ToString() ?? "0");
+                double valB = double.Parse(b[MinMaxCol]?.ToString() ?? "0");
+                return ascending ? valA.CompareTo(valB) : valB.CompareTo(valA);
+            });
+
+            dataGridViewResult_DAO.Rows.Clear();
+
+            for (int i = 0; i < dataList.Count; i++)
+            {
+                int newRowIndex = dataGridViewResult_DAO.Rows.Add();
+
+                for (int j = 0; j < dataGridViewResult_DAO.Columns.Count; j++)
+                    dataGridViewResult_DAO.Rows[newRowIndex].Cells[j].Value = dataList[i][j];
+
+                dataGridViewResult_DAO.Rows[newRowIndex].Cells[0].Value = (i + 1).ToString();
+            }
+        }
     }
 }
