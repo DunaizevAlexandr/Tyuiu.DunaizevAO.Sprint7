@@ -257,52 +257,48 @@ namespace Tyuiu.DunaizevAO.Sprint7.Project.V2
         {
             try
             {
-                if (varTabl == "Owner")
-                {
-                    saveFileDialog_DAO.FileName = "OwnerData.csv";
-                }
-                if (varTabl == "Shop")
-                {
-                    saveFileDialog_DAO.FileName = "ShopData.csv";
-                }
-                if (varTabl == "Prov")
-                {
-                    saveFileDialog_DAO.FileName = "ProvData.csv";
-                }
+                if (varTabl == "Owner") saveFileDialog_DAO.FileName = "OwnerData.csv";
+                if (varTabl == "Shop") saveFileDialog_DAO.FileName = "ShopData.csv";
+                if (varTabl == "Prov") saveFileDialog_DAO.FileName = "ProvData.csv";
+
                 saveFileDialog_DAO.InitialDirectory = @"C:\";
+
                 if (saveFileDialog_DAO.ShowDialog() == DialogResult.OK)
                 {
                     string savepath = saveFileDialog_DAO.FileName;
-
                     if (File.Exists(savepath)) File.Delete(savepath);
 
                     int rows = dataGridViewResult_DAO.RowCount;
                     int columns = dataGridViewResult_DAO.ColumnCount;
 
-                    StringBuilder strBuilder = new StringBuilder();
+                    List<string> lines = new List<string>();
 
                     for (int i = 0; i < rows; i++)
                     {
-                        if (dataGridViewResult_DAO.Rows[i].IsNewRow)
-                            continue;
+                        if (dataGridViewResult_DAO.Rows[i].IsNewRow) continue;
+
+                        string[] cells = new string[columns];
 
                         for (int j = 0; j < columns; j++)
                         {
                             string cellValue = dataGridViewResult_DAO.Rows[i].Cells[j].Value?.ToString() ?? "";
-
-                            strBuilder.Append(cellValue);
-
-                            if (j != columns - 1) strBuilder.Append(";");
+                            cells[j] = cellValue;
                         }
-                        strBuilder.AppendLine();
+
+                        string line = string.Join(";", cells);
+                        lines.Add(line);
                     }
-                    File.WriteAllText(savepath, strBuilder.ToString(), Encoding.UTF8);
-                    MessageBox.Show("Файл сохранен", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    File.WriteAllLines(savepath, lines, Encoding.UTF8);
+
+                    MessageBox.Show("Файл сохранен", "Информация",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
-                MessageBox.Show("Файл не сохранен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Файл не сохранен", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
